@@ -51,6 +51,17 @@ def supplier_table(agency):
             f"<tbody>{body}</tbody></table></div>")
 
 
+def subcontract_table():
+    path = Path("data/out/boeing_subawards.csv")
+    if not path.exists():
+        return ""
+    d = pd.read_csv(path).head(8)
+    body = "".join(f"<tr><td>{html.escape(str(r.supplier))}</td><td class=n>${r.amt / 1e9:,.2f}B</td>"
+                   f"<td class=n>{r.share:.0%}</td><td class=n>{r.reports:,}</td></tr>" for r in d.itertuples())
+    return ("<div class=wrap><table><thead><tr><th>Subcontractor (parent)</th><th class=n>FY21-25</th>"
+            f"<th class=n>Share</th><th class=n>Reports</th></tr></thead><tbody>{body}</tbody></table></div>")
+
+
 def build():
     n = numbers()
     page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
@@ -79,6 +90,12 @@ supplier base is far flatter: top five {n['nasa_ultimate_parent_top5_share']}, H
 <img src="charts/hhi-trend.svg" alt="HHI by fiscal year at record and parent level for DoD and NASA">
 <h3>DoD aerospace: top parent companies</h3>{supplier_table('dod')}
 <h3>NASA: top parent companies</h3>{supplier_table('nasa')}
+<h3>One tier down: Boeing as a buyer</h3>
+<p>In the {n.get('boeing_sub_reports', '')} first-tier subcontracts Boeing reported under its largest DoD awards
+({n.get('boeing_sub_total', '')}), the biggest subcontractor record holds {n.get('boeing_sub_child_top1_share', '')}, but
+{n.get('boeing_sub_parent_top1', '')} across its units holds {n.get('boeing_sub_parent_top1_share', '')}; the top five rise
+from {n.get('boeing_sub_child_top5_share', '')} to {n.get('boeing_sub_parent_top5_share', '')}. These are Boeing's own
+first-tier reports under federal subaward rules.</p>{subcontract_table()}
 
 <h2>2. Contract type follows the kind of work</h2>
 <p>DoD puts {n['dod_all_fixed_share']} of aerospace dollars on fixed-price contracts ({n['dod_ffp_share']} on firm fixed

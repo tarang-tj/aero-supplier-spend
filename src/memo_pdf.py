@@ -29,7 +29,7 @@ def build(md=Path("memo.md"), html=Path("docs/memo.html"), pdf=Path("docs/memo.p
         browser = p.chromium.launch()
         page = browser.new_page()
         page.goto(html.resolve().as_uri())
-        page.pdf(path=str(pdf), format="Letter", margin={"top": "0.5in", "bottom": "0.5in",
+        page.pdf(path=str(pdf), format="Letter", margin={"top": "0.4in", "bottom": "0.35in",
                                                         "left": "0.6in", "right": "0.6in"})
         browser.close()
     return len(PdfReader(str(pdf)).pages)

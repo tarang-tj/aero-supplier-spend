@@ -92,6 +92,16 @@ def build(con, out=OUT):
     add("child_records", n_children, f"{n_children:,}", "fact_sup")
     add("parent_companies", n_parents, f"{n_parents:,}", "fact_sup")
     add("crosswalk_rows", len(pd.read_csv("data/crosswalk.csv")), f"{len(pd.read_csv('data/crosswalk.csv'))}", "crosswalk.csv")
+    subs = out / "boeing_subawards_summary.csv"
+    if subs.exists():  # stretch module: Boeing's reported first-tier subcontracts
+        b = dict(csv.reader(subs.read_text().splitlines()[1:]))
+        add("boeing_sub_total", float(b["total"]), bn(float(b["total"])), subs.name)
+        add("boeing_sub_reports", int(b["reports"]), f"{int(b['reports']):,}", subs.name)
+        add("boeing_sub_awards", int(b["awards"]), b["awards"], subs.name)
+        for lvl in ("child", "parent"):
+            for m in ("top1_share", "top5_share"):
+                add(f"boeing_sub_{lvl}_{m}", float(b[f"{lvl}_{m}"]), pct(float(b[f"{lvl}_{m}"])), subs.name)
+        add("boeing_sub_parent_top1", b["parent_top1"], b["parent_top1"], subs.name)
     s25 = scope_s[scope_s.fy == 2025].set_index("definition")
     for d in ("naics", "psc"):
         add(f"dod_fy25_{d}_child_top5", s25.loc[d, "top5_share"], pct(s25.loc[d, "top5_share"]), "scope_sensitivity.csv")

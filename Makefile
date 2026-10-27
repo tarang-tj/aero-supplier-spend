@@ -1,8 +1,10 @@
 PY := .venv/bin/python -I
-.PHONY: pull load crosswalk metrics outputs reconcile test lint probe gate all
+.PHONY: subawards pull load crosswalk metrics outputs reconcile test lint probe gate all
 
 pull:        ## download all slices (slow, networked)
 	$(PY) -m src.pull --all --workers 3
+subawards:   ## Boeing first-tier subcontracts (networked, ~10 min)
+	$(PY) -m src.subawards
 load:
 	$(PY) -m src.load
 crosswalk:

@@ -8,6 +8,7 @@ Who gets paid to build U.S. military and NASA aerospace, on what contract terms,
 1. **Supplier records hide half the concentration.** DoD's largest aerospace supplier record holds 21% of obligations; rolled up to parent companies, Lockheed Martin holds 43% and the top five hold 82% (HHI 2,360).
 2. **Contract type follows the kind of work.** DoD puts 77% of aerospace dollars on fixed-price contracts but only 27% of R&D. NASA is 66% cost-type.
 3. **Most DoD aerospace dollars are not competed:** 87%, mostly justified as only one source.
+4. **One tier down, the same pattern:** in Boeing's reported subcontracts ($19.4B), the top record holds 8% but RTX across its units holds 17%.
 
 ## Scope
 - Every NASA contract transaction, and every DoD transaction in NAICS 3364 (aerospace product and parts manufacturing).
@@ -18,6 +19,7 @@ Who gets paid to build U.S. military and NASA aerospace, on what contract terms,
 ```
 python3 -m venv .venv && .venv/bin/pip install -e ".[dev]" && .venv/bin/playwright install chromium
 make pull      # 10 downloads from the USAspending API, about an hour
+make subawards # Boeing's reported subcontracts via the per-award API (optional)
 make all       # load, crosswalk, metrics, charts, workbook, page, then the gate
 ```
 `make gate` runs ruff, pytest (fixtures plus tie-outs on the real outputs), the networked reconcile against USAspending, and a Playwright boot probe of the page at 1440 and 375 px.

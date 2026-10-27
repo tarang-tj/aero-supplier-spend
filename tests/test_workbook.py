@@ -65,3 +65,34 @@ def test_real_workbook_matches_db():
     con = duckdb.connect("data/spend.duckdb", read_only=True)
     total = con.execute("SELECT sum(obligation) FROM fact_sup").fetchone()[0]
     assert check_workbook("docs/aero-supplier-spend.xlsx", total) == []
+
+
+def evaluated_totals(path):
+    """Evaluate every totals-row formula with a Python Excel engine (no LibreOffice needed);
+    return (sheet, cell, engine value, data-cell sum) for each."""
+    import os
+
+    import formulas
+    sol = formulas.ExcelModel().loads(str(path)).finish().calculate()
+    by_key = {k.upper(): v for k, v in sol.items()}
+    out = []
+    wb = load_workbook(path)
+    for ws in wb.worksheets:
+        for cell in ws[ws.max_row]:
+            if isinstance(cell.value, str) and cell.value.startswith("="):
+                key = f"'[{os.path.basename(path)}]{ws.title}'!{cell.coordinate}".upper()
+                val = by_key[key].value[0][0]
+                data = sum((ws.cell(r, cell.column).value or 0) for r in range(2, ws.max_row))
+                out.append((ws.title, cell.coordinate, val, data))
+    return out
+
+
+def test_formulas_evaluate_to_data_sums(fixture_wb):
+    rows = evaluated_totals(fixture_wb)
+    assert rows and all(abs(v - d) < 0.01 for _, _, v, d in rows)
+
+
+@pytest.mark.skipif(not Path("docs/aero-supplier-spend.xlsx").exists(), reason="real workbook not built")
+def test_real_formulas_evaluate_to_data_sums():
+    rows = evaluated_totals(Path("docs/aero-supplier-spend.xlsx"))
+    assert rows and all(abs(v - d) < 0.01 for _, _, v, d in rows)

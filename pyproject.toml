@@ -6,7 +6,7 @@ requires-python = ">=3.12"
 dependencies = ["duckdb", "pandas", "pyarrow", "openpyxl", "matplotlib", "pypdf", "playwright"]
 
 [project.optional-dependencies]
-dev = ["pytest", "ruff"]
+dev = ["pytest", "ruff", "formulas"]
 
 [build-system]
 requires = ["setuptools>=68"]

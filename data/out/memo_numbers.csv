@@ -88,5 +88,13 @@ nasa_fixed_rnd_northrop_grumman_share,0.10373051857940031,10%,fixed_price_develo
 child_records,11227,"11,227",fact_sup
 parent_companies,9803,"9,803",fact_sup
 crosswalk_rows,159,159,crosswalk.csv
+boeing_sub_total,19404339180.319996,$19.4B,boeing_subawards_summary.csv
+boeing_sub_reports,18758,"18,758",boeing_subawards_summary.csv
+boeing_sub_awards,82,82,boeing_subawards_summary.csv
+boeing_sub_child_top1_share,0.07686921395822571,8%,boeing_subawards_summary.csv
+boeing_sub_child_top5_share,0.29091567114613315,29%,boeing_subawards_summary.csv
+boeing_sub_parent_top1_share,0.16943801613324408,17%,boeing_subawards_summary.csv
+boeing_sub_parent_top5_share,0.41198619946037063,41%,boeing_subawards_summary.csv
+boeing_sub_parent_top1,RTX,RTX,boeing_subawards_summary.csv
 dod_fy25_naics_child_top5,0.5175,52%,scope_sensitivity.csv
 dod_fy25_psc_child_top5,0.6041,60%,scope_sensitivity.csv
