@@ -1,0 +1,153 @@
+key_type,key,name_raw,ultimate_parent,basis,ffrdc,source_url,reviewed_on
+parent_uei,C6M7C2FLKER5,SPACE EXPLORATION TECHNOLOGIES CORP.,SpaceX,own_parent,,,2026-10-26
+parent_uei,U2JMKHNS5TG4,CALIFORNIA INSTITUTE OF TECHNOLOGY,Caltech (JPL),same_name,yes,https://www.nsf.gov/statistics/ffrdclist/,2026-10-26
+parent_uei,YC1YP79BFD19,CALIFORNIA INSTITUTE OF TECHNOLOGY,Caltech (JPL),same_name,yes,https://www.nsf.gov/statistics/ffrdclist/,2026-10-26
+parent_uei,NU2UC8MX6NK1,THE BOEING COMPANY,Boeing,own_parent,,https://www.sec.gov/Archives/edgar/data/12927/000162828026004357/a202512dec3110kex21.htm,2026-10-26
+parent_uei,ZE95AC36GJ76,THE BOEING COMPANY,Boeing,same_name,,https://www.sec.gov/Archives/edgar/data/12927/000162828026004357/a202512dec3110kex21.htm,2026-10-26
+parent_uei,ZFN2JJXBLZT3,LOCKHEED MARTIN CORP,Lockheed Martin,own_parent,,https://www.sec.gov/Archives/edgar/data/936468/000162828026004195/ex21q42025.htm,2026-10-26
+parent_uei,NKVZLJL93QT6,NORTHROP GRUMMAN CORPORATION,Northrop Grumman,own_parent,,https://www.sec.gov/Archives/edgar/data/1133421/000113342126000003/noc-12312025xex21.htm,2026-10-26
+parent_uei,LRVQERN7YNH9,NORTHROP GRUMMAN SYSTEMS CORPORATION,Northrop Grumman,subsidiary,,https://www.sec.gov/Archives/edgar/data/1133421/000113342126000003/noc-12312025xex21.htm,2026-10-26
+parent_uei,MKCAUUG2K7H6,JACOBS ENGINEERING GROUP INC,Jacobs,own_parent,,,2026-10-26
+parent_uei,TU4KCXMM9AP6,AMENTUM HOLDINGS INC.,Amentum,own_parent,,,2026-10-26
+parent_uei,VJ3XVZC76HT9,"KBR, INC.",KBR,own_parent,,https://www.sec.gov/Archives/edgar/data/1357615/000135761526000051/kbr-ex211x01022026.htm,2026-10-26
+parent_uei,TGPKTMN8YL31,"KBR WYLE SERVICES, LLC",KBR,subsidiary,,https://www.sec.gov/Archives/edgar/data/1357615/000135761526000051/kbr-ex211x01022026.htm,2026-10-26
+parent_uei,ZL41ERXMPAR3,"LEIDOS HOLDINGS, INC.",Leidos,own_parent,,https://www.sec.gov/Archives/edgar/data/1336920/000133692026000030/ldos1022026ex21.htm,2026-10-26
+parent_uei,SH2ER4W6LH13,"BLUE ORIGIN WASHINGTON, LLC",Blue Origin,own_parent,,,2026-10-26
+parent_uei,SJULQDJ8NZU7,"L3HARRIS TECHNOLOGIES, INC",L3Harris,own_parent,,https://www.sec.gov/Archives/edgar/data/202058/000020205826000015/a10-kexhibit21cy25xq4.htm,2026-10-26
+parent_uei,F8F5V4MJ2KX2,"AEROJET ROCKETDYNE HOLDINGS, INC.",L3Harris,acquisition,,https://www.sec.gov/Archives/edgar/data/202058/000020205826000015/a10-kexhibit21cy25xq4.htm,2026-10-26
+parent_uei,PPLZG8J3N9D4,RTX CORPORATION,RTX,own_parent,,https://www.sec.gov/Archives/edgar/data/101829/000010182926000006/exhibit212025-12x3110xk.htm,2026-10-26
+parent_uei,CMZ8EX8SUE75,"VERITAS CAPITAL FUND MANAGEMENT, L.L.C.",Peraton (Veritas Capital),own_parent,,,2026-10-26
+parent_uei,ZBPQEJVECCT4,PERATON INC.,Peraton (Veritas Capital),name_variant,,,2026-10-26
+parent_uei,FTMTDMBR29C7,THE JOHNS HOPKINS UNIVERSITY,Johns Hopkins University (incl. APL),own_parent,,,2026-10-26
+parent_uei,C1HBCJ9RMBV3,THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC,Johns Hopkins University (incl. APL),subsidiary,,https://www.jhuapl.edu/about,2026-10-26
+parent_uei,LFDKLGTB62C4,"ASSOCIATION OF UNIVERSITIES FOR RESEARCH IN ASTRONOMY, INC.",AURA,same_name,,,2026-10-26
+parent_uei,W1NBN156CYF9,"ASSOCIATION OF UNIVERSITIES FOR RESEARCH IN ASTRONOMY, INC.",AURA,same_name,,,2026-10-26
+parent_uei,YA8LJBJCND19,THE AEROSPACE CORPORATION,The Aerospace Corporation,own_parent,yes,https://www.nsf.gov/statistics/ffrdclist/,2026-10-26
+parent_uei,H4LJM894M2J3,BALL CORP,BAE Systems,acquisition,,https://www.baesystems.com/en/article/bae-systems-completes-acquisition-of-ball-aerospace/,2026-10-26
+recipient_uei,C8ZLJ61YJ528,BAE SYSTEMS SPACE & MISSION SYSTEMS INC.,BAE Systems,acquisition,,https://www.baesystems.com/en/article/bae-systems-completes-acquisition-of-ball-aerospace/,2026-10-26
+recipient_uei,GM94J2EL8T19,BALL AEROSPACE & TECHNOLOGIES CORP.,BAE Systems,acquisition,,https://www.baesystems.com/en/article/bae-systems-completes-acquisition-of-ball-aerospace/,2026-10-26
+recipient_uei,K8QPQLGTRM33,"AMENTUM TECHNOLOGY, INC.",Amentum,acquisition,,https://www.businesswire.com/news/home/20240927902707/en,2026-10-26
+recipient_uei,H2RGSKWXKHQ5,"AMENTUM TECHNOLOGY, INC.",Amentum,acquisition,,https://www.businesswire.com/news/home/20240927902707/en,2026-10-26
+recipient_uei,DTRJLHVLK8F4,"AMENTUM TECHNOLOGY, INC.",Amentum,acquisition,,https://www.businesswire.com/news/home/20240927902707/en,2026-10-26
+parent_uei,JSQTW5L2SSM1,LOCKHEED MARTIN CORPORATION,Lockheed Martin,name_variant,,https://www.sec.gov/Archives/edgar/data/936468/000162828026004195/ex21q42025.htm,2026-10-26
+parent_uei,KMEVRAKJVBD3,LOCKHEED MARTIN CORPORATION,Lockheed Martin,name_variant,,https://www.sec.gov/Archives/edgar/data/936468/000162828026004195/ex21q42025.htm,2026-10-26
+parent_uei,XFJMYSYFJEK4,LOCKHEED MARTIN CORPORATION,Lockheed Martin,name_variant,,https://www.sec.gov/Archives/edgar/data/936468/000162828026004195/ex21q42025.htm,2026-10-26
+parent_uei,WXTSNW5E97R6,SIKORSKY SUPPORT SERVICES INC,Lockheed Martin,subsidiary,,https://www.sec.gov/Archives/edgar/data/936468/000162828026004195/ex21q42025.htm,2026-10-26
+parent_uei,EGAVSJTA2D81,ROCKWELL COLLINS AUSTRALIA PTY LIMITED,RTX,subsidiary,,https://www.sec.gov/Archives/edgar/data/101829/000010182926000006/exhibit212025-12x3110xk.htm,2026-10-26
+parent_uei,D8QQPFNYJD63,NORTHROP GRUMMAN SYSTEMS CORP,Northrop Grumman,subsidiary,,https://www.sec.gov/Archives/edgar/data/1133421/000113342126000003/noc-12312025xex21.htm,2026-10-26
+parent_uei,PK8PM2GNVMP8,NORTHROP GRUMMAN SYSTEMS CORPORATION,Northrop Grumman,subsidiary,,https://www.sec.gov/Archives/edgar/data/1133421/000113342126000003/noc-12312025xex21.htm,2026-10-26
+parent_uei,JRZ1WHXAKBM3,GENERAL ELECTRIC COMPANY,GE Aerospace,own_parent,,https://www.sec.gov/Archives/edgar/data/40545/000004054526000008/ex21subsidiariesofregistra.htm,2026-10-26
+parent_uei,YX6EL4J1WLP9,GENERAL ATOMICS,General Atomics,own_parent,,,2026-10-26
+parent_uei,ZH4NVFG3Z526,"GENERAL ATOMICS AERONAUTICAL SYSTEMS, INC.",General Atomics,name_variant,,,2026-10-26
+parent_uei,VE65QFAKCLG7,ROLLS-ROYCE HOLDINGS PLC,Rolls-Royce,own_parent,,,2026-10-26
+parent_uei,F32RBQ3CHAG9,ROLLS-ROYCE HOLDINGS PLC,Rolls-Royce,same_name,,,2026-10-26
+parent_uei,E5K9VR2A1MW9,BAE SYSTEMS PLC,BAE Systems,own_parent,,,2026-10-26
+parent_uei,HKUMGJBEMKN3,TEXTRON INC,Textron,own_parent,,,2026-10-26
+parent_uei,JHFZTG8ZC9V2,BELL BOEING JOINT PROJECT OFFICE,Bell Boeing JV (Textron + Boeing),joint_venture,,,2026-10-26
+parent_uei,WGB7GAKM7A68,RAYTHEON/LOCKHEED MARTIN JAVELIN JV,Javelin JV (RTX + Lockheed),joint_venture,,,2026-10-26
+parent_uei,E8THACLQU5M5,"CFM INTERNATIONAL, INC.",CFM International (JV),joint_venture,,,2026-10-26
+parent_uei,YBVGQEYENNM6,HONEYWELL INTERNATIONAL INC,Honeywell,own_parent,,,2026-10-26
+parent_uei,VF58HFRNGEL8,GENERAL DYNAMICS CORP,General Dynamics,own_parent,,,2026-10-26
+parent_uei,GJVCPEBZV574,NORTHROP GRUMMAN INNOVATION SYSTEMS LLC,Northrop Grumman,name_variant,,https://www.sec.gov/Archives/edgar/data/1133421/000113342126000003/noc-12312025xex21.htm,2026-10-26
+parent_uei,MDSWM6MB1BH7,"LEIDOS, INC.",Leidos,name_variant,,https://www.sec.gov/Archives/edgar/data/1336920/000133692026000030/ldos1022026ex21.htm,2026-10-26
+parent_uei,NBVAJ2FT6CK5,"BLUE ORIGIN FEDERATION, LLC",Blue Origin,name_variant,,,2026-10-26
+parent_uei,LWM1FFQ935S8,BAE SYSTEMS INFORMATION AND ELECTRONIC SYSTEMS INTEGRATION INC.,BAE Systems,name_variant,,,2026-10-26
+parent_uei,HJP4JZG1FUL9,LOCKHEED MARTIN CORPORATION,Lockheed Martin,name_variant,,https://www.sec.gov/Archives/edgar/data/936468/000162828026004195/ex21q42025.htm,2026-10-26
+parent_uei,VJPHJTGAVHD4,BAE SYSTEMS INFORMATION AND ELECTRONIC SYSTEMS INTEGRATION INC.,BAE Systems,name_variant,,,2026-10-26
+parent_uei,UKN6CJ49WB54,GENERAL DYNAMICS LAND SYSTEMS - CANADA CORPORATION,General Dynamics,name_variant,,https://www.sec.gov/Archives/edgar/data/40533/000004053326000006/ex21-20251231.htm,2026-10-26
+parent_uei,NMHFLDYJJ4C5,LOCKHEED MARTIN CORPORATION,Lockheed Martin,name_variant,,https://www.sec.gov/Archives/edgar/data/936468/000162828026004195/ex21q42025.htm,2026-10-26
+parent_uei,MU3CM1145E44,"GENERAL DYNAMICS MISSION SYSTEMS, INC.",General Dynamics,name_variant,,https://www.sec.gov/Archives/edgar/data/40533/000004053326000006/ex21-20251231.htm,2026-10-26
+parent_uei,HUDHMPV9B6M9,NORTHROP GRUMMAN SYSTEMS CORPORATION,Northrop Grumman,name_variant,,https://www.sec.gov/Archives/edgar/data/1133421/000113342126000003/noc-12312025xex21.htm,2026-10-26
+parent_uei,SELSFJKVYW61,AEROJET ROCKETDYNE INC,L3Harris,acquisition,,https://www.sec.gov/Archives/edgar/data/202058/000020205826000015/a10-kexhibit21cy25xq4.htm,2026-10-26
+parent_uei,MS4JKPLLQ4X9,"JACOBS SOLUTIONS, INC",Jacobs,name_variant,,,2026-10-26
+parent_uei,TZ67YHER84V7,"L3HARRIS TECHNOLOGIES, INC.",L3Harris,name_variant,,https://www.sec.gov/Archives/edgar/data/202058/000020205826000015/a10-kexhibit21cy25xq4.htm,2026-10-26
+parent_uei,MJLVU5WMX9M9,"AEROJET ROCKETDYNE, INC.",L3Harris,acquisition,,https://www.sec.gov/Archives/edgar/data/202058/000020205826000015/a10-kexhibit21cy25xq4.htm,2026-10-26
+parent_uei,JSRNXGERS624,AMENTUM GOVERNMENT SERVICES HOLDINGS LLC,Amentum,name_variant,,,2026-10-26
+parent_uei,K1CMWXCNLD97,ROLLS-ROYCE MARINE NORTH AMERICA INC.,Rolls-Royce,name_variant,,,2026-10-26
+parent_uei,KLW3ZYL15493,RAYTHEON COMPANY,RTX,name_variant,,https://www.sec.gov/Archives/edgar/data/101829/000010182926000006/exhibit212025-12x3110xk.htm,2026-10-26
+parent_uei,M2FYKG7HP723,GENERAL ELECTRIC COMPANY,GE Aerospace,name_variant,,https://www.sec.gov/Archives/edgar/data/40545/000004054526000008/ex21subsidiariesofregistra.htm,2026-10-26
+parent_uei,JEGFV3LWEJH7,"L3HARRIS TECHNOLOGIES, INC.",L3Harris,name_variant,,https://www.sec.gov/Archives/edgar/data/202058/000020205826000015/a10-kexhibit21cy25xq4.htm,2026-10-26
+parent_uei,H1C4ZVECADM6,THE BOEING COMPANY,Boeing,name_variant,,https://www.sec.gov/Archives/edgar/data/12927/000162828026004357/a202512dec3110kex21.htm,2026-10-26
+parent_uei,JM5LPWYMNC33,"LOCKHEED MARTIN GLOBAL, INC",Lockheed Martin,name_variant,,https://www.sec.gov/Archives/edgar/data/936468/000162828026004195/ex21q42025.htm,2026-10-26
+parent_uei,LAJJQWA1PF31,THE BOEING COMPANY,Boeing,name_variant,,https://www.sec.gov/Archives/edgar/data/12927/000162828026004357/a202512dec3110kex21.htm,2026-10-26
+parent_uei,WTPJHYWAGGX7,NORTHROP GRUMMAN SYSTEMS CORPORATION,Northrop Grumman,name_variant,,https://www.sec.gov/Archives/edgar/data/1133421/000113342126000003/noc-12312025xex21.htm,2026-10-26
+parent_uei,NHXNJALUN738,RTX CORPORATION,RTX,name_variant,,https://www.sec.gov/Archives/edgar/data/101829/000010182926000006/exhibit212025-12x3110xk.htm,2026-10-26
+parent_uei,PNE9R5EJMWK8,"L3HARRIS TECHNOLOGIES, INC.",L3Harris,name_variant,,https://www.sec.gov/Archives/edgar/data/202058/000020205826000015/a10-kexhibit21cy25xq4.htm,2026-10-26
+parent_uei,N3RSDM1LXKK9,PERATON INC.,Peraton (Veritas Capital),name_variant,,,2026-10-26
+parent_uei,MLZQLK2GQDW7,"LOCKHEED MARTIN INTEGRATED SYSTEMS, LLC",Lockheed Martin,name_variant,,https://www.sec.gov/Archives/edgar/data/936468/000162828026004195/ex21q42025.htm,2026-10-26
+parent_uei,CFXXH5YFMZK7,AMENTUM GOVERNMENT SERVICES HOLDINGS LLC,Amentum,name_variant,,,2026-10-26
+parent_uei,KA18WLGL1NQ5,AMENTUM SPACEPORT LLC,Amentum,name_variant,,,2026-10-26
+parent_uei,PNQKKYEK31E3,"BAE SYSTEMS LAND & ARMAMENTS, L.P.",BAE Systems,name_variant,,,2026-10-26
+parent_uei,H5V3JVTM1C41,LOCKHEED MARTIN CORPORATION,Lockheed Martin,name_variant,,https://www.sec.gov/Archives/edgar/data/936468/000162828026004195/ex21q42025.htm,2026-10-26
+parent_uei,KHK8QYLFGLU1,ROLLS-ROYCE CORPORATION,Rolls-Royce,name_variant,,,2026-10-26
+parent_uei,FHQSTBB3NQC3,BAE SYSTEMS INFORMATION AND ELECTRONIC SYSTEMS INTEGRATION INC.,BAE Systems,name_variant,,,2026-10-26
+parent_uei,FGUQXGJZ1U13,NORTHROP GRUMMAN SYSTEMS CORPORATION,Northrop Grumman,name_variant,,https://www.sec.gov/Archives/edgar/data/1133421/000113342126000003/noc-12312025xex21.htm,2026-10-26
+parent_uei,NGBVY5X32XZ5,LOCKHEED MARTIN CORPORATION,Lockheed Martin,name_variant,,https://www.sec.gov/Archives/edgar/data/936468/000162828026004195/ex21q42025.htm,2026-10-26
+parent_uei,E3HYKKLT5ZT1,GENERAL ELECTRIC COMPANY,GE Aerospace,name_variant,,https://www.sec.gov/Archives/edgar/data/40545/000004054526000008/ex21subsidiariesofregistra.htm,2026-10-26
+parent_uei,LEDQU4AJK841,BAE SYSTEMS INFORMATION & ELECTRONIC SYSTEMS INTEGRATION INC.,BAE Systems,name_variant,,,2026-10-26
+parent_uei,QR9HZJAHYH97,NORTHROP GRUMMAN SYSTEMS CORPORATION,Northrop Grumman,name_variant,,https://www.sec.gov/Archives/edgar/data/1133421/000113342126000003/noc-12312025xex21.htm,2026-10-26
+parent_uei,MJENSFHZJP11,LOCKHEED MARTIN CORPORATION,Lockheed Martin,name_variant,,https://www.sec.gov/Archives/edgar/data/936468/000162828026004195/ex21q42025.htm,2026-10-26
+parent_uei,CJV6LVMMM5D8,BAE SYSTEMS LAND & ARMAMENTS L.P.,BAE Systems,name_variant,,,2026-10-26
+parent_uei,JXSUJ4ALFHB4,HONEYWELL INTERNATIONAL INC.,Honeywell,name_variant,,https://www.sec.gov/Archives/edgar/data/773840/000077384026000013/exhibit2112312025.htm,2026-10-26
+parent_uei,XVMLA2J7FGE7,"HONEYWELL INTERNATIONAL, INC",Honeywell,name_variant,,https://www.sec.gov/Archives/edgar/data/773840/000077384026000013/exhibit2112312025.htm,2026-10-26
+parent_uei,KJLHKFLNQL59,PERATON SERVICES & SOLUTIONS INC.,Peraton (Veritas Capital),name_variant,,,2026-10-26
+parent_uei,KQG9ZKVSELH6,RTX CORPORATION,RTX,name_variant,,https://www.sec.gov/Archives/edgar/data/101829/000010182926000006/exhibit212025-12x3110xk.htm,2026-10-26
+parent_uei,YZBAT6J9FZD1,HONEYWELL AEROSPACE YEOVIL,Honeywell,name_variant,,https://www.sec.gov/Archives/edgar/data/773840/000077384026000013/exhibit2112312025.htm,2026-10-26
+parent_uei,VEA1KSK8LGS3,ROLLS-ROYCE HOLDINGS PLC,Rolls-Royce,name_variant,,,2026-10-26
+parent_uei,KDT2YLB34NT6,LOCKHEED MARTIN CORPORATION,Lockheed Martin,name_variant,,https://www.sec.gov/Archives/edgar/data/936468/000162828026004195/ex21q42025.htm,2026-10-26
+parent_uei,CZ11GS5EAEF6,HONEYWELL INTERNATIONAL INC,Honeywell,name_variant,,https://www.sec.gov/Archives/edgar/data/773840/000077384026000013/exhibit2112312025.htm,2026-10-26
+parent_uei,LEMLXG994AU3,NORTHROP GRUMMAN SYSTEMS CORPORATION,Northrop Grumman,name_variant,,https://www.sec.gov/Archives/edgar/data/1133421/000113342126000003/noc-12312025xex21.htm,2026-10-26
+parent_uei,DPL6DDL2WD47,NORTHROP GRUMMAN SYSTEMS CORPORATION,Northrop Grumman,name_variant,,https://www.sec.gov/Archives/edgar/data/1133421/000113342126000003/noc-12312025xex21.htm,2026-10-26
+parent_uei,E4X3BLZPPPX3,NORTHROP GRUMMAN SYSTEMS CORPORATION,Northrop Grumman,name_variant,,https://www.sec.gov/Archives/edgar/data/1133421/000113342126000003/noc-12312025xex21.htm,2026-10-26
+parent_uei,UVUTB62B9AV3,BAE SYSTEMS PLC,BAE Systems,name_variant,,,2026-10-26
+parent_uei,YBBWTDBEU6D9,PERATON INC.,Peraton (Veritas Capital),name_variant,,,2026-10-26
+parent_uei,V79GZKJ54KX3,HONEYWELL TECHNOLOGY SOLUTIONS INCORPORATED,Honeywell,name_variant,,https://www.sec.gov/Archives/edgar/data/773840/000077384026000013/exhibit2112312025.htm,2026-10-26
+parent_uei,NM4CXQFFBXZ5,PERATON SOLUTIONS INC.,Peraton (Veritas Capital),name_variant,,,2026-10-26
+parent_uei,SFKWJAYSTL95,"BLUE ORIGIN, LLC",Blue Origin,name_variant,,,2026-10-26
+parent_uei,HYBLSJAMM2F4,"KBR WYLE SERVICES, LLC",KBR,name_variant,,https://www.sec.gov/Archives/edgar/data/1357615/000135761526000051/kbr-ex211x01022026.htm,2026-10-26
+parent_uei,QN1BCFY7JDJ5,RTX CORPORATION,RTX,name_variant,,https://www.sec.gov/Archives/edgar/data/101829/000010182926000006/exhibit212025-12x3110xk.htm,2026-10-26
+parent_uei,CM2HHAV628D5,L3HARRIS TECHNOLOGIES INTEGRATED SYSTEMS L.P.,L3Harris,name_variant,,https://www.sec.gov/Archives/edgar/data/202058/000020205826000015/a10-kexhibit21cy25xq4.htm,2026-10-26
+parent_uei,WMKXMDJFSXA7,BAE SYSTEMS INFORMATION AND ELECTRONIC SYSTEMS INTEGRATION INC.,BAE Systems,name_variant,,,2026-10-26
+parent_uei,NYAPEDKLW2A5,NORTHROP GRUMMAN SYSTEMS CORP,Northrop Grumman,name_variant,,https://www.sec.gov/Archives/edgar/data/1133421/000113342126000003/noc-12312025xex21.htm,2026-10-26
+parent_uei,NQKWRHGLTD55,PERATON LABS INC,Peraton (Veritas Capital),name_variant,,,2026-10-26
+parent_uei,H11HD5VHGHN3,LOCKHEED MARTIN CORPORATION,Lockheed Martin,name_variant,,https://www.sec.gov/Archives/edgar/data/936468/000162828026004195/ex21q42025.htm,2026-10-26
+parent_uei,H42MN1TYJ257,"L3HARRIS FUZING AND ORDNANCE SYSTEMS, INC.",L3Harris,name_variant,,https://www.sec.gov/Archives/edgar/data/202058/000020205826000015/a10-kexhibit21cy25xq4.htm,2026-10-26
+parent_uei,SR7UCNN6CBN5,BLUE ORIGIN LLC,Blue Origin,name_variant,,,2026-10-26
+parent_uei,FCZTRN9J12U3,"LEIDOS, INC.",Leidos,name_variant,,https://www.sec.gov/Archives/edgar/data/1336920/000133692026000030/ldos1022026ex21.htm,2026-10-26
+parent_uei,RXDZHRUWMWB3,GENERAL ATOMICS,General Atomics,name_variant,,,2026-10-26
+parent_uei,E422A91WKZ57,"GENERAL DYNAMICS MISSION SYSTEMS, INC.",General Dynamics,name_variant,,https://www.sec.gov/Archives/edgar/data/40533/000004053326000006/ex21-20251231.htm,2026-10-26
+parent_uei,RDFKNPZNQ8E3,L3HARRIS TECHNOLOGIES INTEGRATED SYSTEMS L.P.,L3Harris,name_variant,,https://www.sec.gov/Archives/edgar/data/202058/000020205826000015/a10-kexhibit21cy25xq4.htm,2026-10-26
+parent_uei,JHLMULLPJ2V5,LOCKHEED MARTIN CORPORATION,Lockheed Martin,name_variant,,https://www.sec.gov/Archives/edgar/data/936468/000162828026004195/ex21q42025.htm,2026-10-26
+parent_uei,PQGNEEY9W5M3,NORTHROP GRUMMAN SYSTEMS CORPORATION,Northrop Grumman,name_variant,,https://www.sec.gov/Archives/edgar/data/1133421/000113342126000003/noc-12312025xex21.htm,2026-10-26
+parent_uei,UT9HCKX9F6Q4,SIKORSKY AIRCRAFT CORPORATION,Lockheed Martin,name_variant,,https://www.sec.gov/Archives/edgar/data/936468/000162828026004195/ex21q42025.htm,2026-10-26
+parent_uei,TA82JN9LYJ44,TEXTRON SYSTEMS CORPORATION,Textron,name_variant,,,2026-10-26
+parent_uei,VM45UTL9JTH1,"KBR WYLE SERVICES, LLC",KBR,name_variant,,https://www.sec.gov/Archives/edgar/data/1357615/000135761526000051/kbr-ex211x01022026.htm,2026-10-26
+parent_uei,RUN6YVGPL4R5,PERATON SERVICES & SOLUTIONS INC,Peraton (Veritas Capital),name_variant,,,2026-10-26
+parent_uei,DZATN7C2FW67,HONEYWELL TECHNOLOGY SOLUTIONS INC.,Honeywell,name_variant,,https://www.sec.gov/Archives/edgar/data/773840/000077384026000013/exhibit2112312025.htm,2026-10-26
+parent_uei,HDHVQ4EF8A89,LOCKHEED MARTIN CORPORATION,Lockheed Martin,name_variant,,https://www.sec.gov/Archives/edgar/data/936468/000162828026004195/ex21q42025.htm,2026-10-26
+parent_uei,S2L2MCGC1XM3,GENERAL DYNAMICS CORPORATION,General Dynamics,name_variant,,https://www.sec.gov/Archives/edgar/data/40533/000004053326000006/ex21-20251231.htm,2026-10-26
+parent_uei,E467WEE1X963,NORTHROP GRUMMAN CORPORATION,Northrop Grumman,name_variant,,https://www.sec.gov/Archives/edgar/data/1133421/000113342126000003/noc-12312025xex21.htm,2026-10-26
+parent_uei,LBWTKQPGC4D4,"NORTHROP GRUMMAN INTERNATIONAL TRADING, INC",Northrop Grumman,name_variant,,https://www.sec.gov/Archives/edgar/data/1133421/000113342126000003/noc-12312025xex21.htm,2026-10-26
+parent_uei,GSXXQX8MLXN6,GENERAL ATOMICS AEROTEC SYSTEMS GMBH,General Atomics,name_variant,,,2026-10-26
+parent_uei,MVKWB3HB5KX5,HONEYWELL INTERNATIONAL INC.,Honeywell,name_variant,,https://www.sec.gov/Archives/edgar/data/773840/000077384026000013/exhibit2112312025.htm,2026-10-26
+parent_uei,NH3LQKBA1SN3,"GENERAL DYNAMICS MISSION SYSTEMS, INC.",General Dynamics,name_variant,,https://www.sec.gov/Archives/edgar/data/40533/000004053326000006/ex21-20251231.htm,2026-10-26
+parent_uei,CNBLJCXHS8J5,HONEYWELL INTERNATIONAL INC.,Honeywell,name_variant,,https://www.sec.gov/Archives/edgar/data/773840/000077384026000013/exhibit2112312025.htm,2026-10-26
+parent_uei,FVW9ABFZGMX3,NORTHROP GRUMMAN SYSTEMS CORPORATION,Northrop Grumman,name_variant,,https://www.sec.gov/Archives/edgar/data/1133421/000113342126000003/noc-12312025xex21.htm,2026-10-26
+parent_uei,LCV2N9FVV739,NORTHROP GRUMMAN SYSTEMS CORPORATION,Northrop Grumman,name_variant,,https://www.sec.gov/Archives/edgar/data/1133421/000113342126000003/noc-12312025xex21.htm,2026-10-26
+parent_uei,MJDNAS47MHP6,"BAE SYSTEMS, INC.",BAE Systems,name_variant,,,2026-10-26
+parent_uei,JVMXHRZHDRF9,GENERAL ATOMICS,General Atomics,name_variant,,,2026-10-26
+parent_uei,FAZSFFE6CST9,GENERAL DYNAMICS CORP,General Dynamics,name_variant,,https://www.sec.gov/Archives/edgar/data/40533/000004053326000006/ex21-20251231.htm,2026-10-26
+parent_uei,HPDLRXR4FYX5,BAE SYSTEMS PLC,BAE Systems,name_variant,,,2026-10-26
+parent_uei,JU9GLKSCUXE3,"KBR WYLE SERVICES, LLC",KBR,name_variant,,https://www.sec.gov/Archives/edgar/data/1357615/000135761526000051/kbr-ex211x01022026.htm,2026-10-26
+parent_uei,QEMLRQA7PLG4,"AMENTUM SERVICES, INC.",Amentum,name_variant,,,2026-10-26
+parent_uei,UWSJVJQGB2X5,SPACE EXPLORATION TECHNOLOGIES CORP.,SpaceX,name_variant,,,2026-10-26
+parent_uei,HW7JDAG1UYU5,BELL HELICOPTER TEXTRON INC,Textron,name_variant,,,2026-10-26
+parent_uei,JNBKNJY87NJ8,HONEYWELL LIMITED,Honeywell,name_variant,,https://www.sec.gov/Archives/edgar/data/773840/000077384026000013/exhibit2112312025.htm,2026-10-26
+parent_uei,N91TELG3HNB6,"L3HARRIS TECHNOLOGIES, INC",L3Harris,name_variant,,https://www.sec.gov/Archives/edgar/data/202058/000020205826000015/a10-kexhibit21cy25xq4.htm,2026-10-26
+parent_uei,KFN4YJH98D51,LOCKHEED MARTIN CORP,Lockheed Martin,name_variant,,https://www.sec.gov/Archives/edgar/data/936468/000162828026004195/ex21q42025.htm,2026-10-26
+parent_uei,XQK3GTZJ6464,BAE SYSTEMS INFORMATION AND ELECTRONIC SYSTEMS INTEGRATION INC.,BAE Systems,name_variant,,,2026-10-26
+parent_uei,TJ6PLVEXMA47,BAE SYSTEMS LAND & ARMAMENTS L.P.,BAE Systems,name_variant,,,2026-10-26
+parent_uei,NJVNVWQJMPA4,THE BOEING COMPANY,Boeing,name_variant,,https://www.sec.gov/Archives/edgar/data/12927/000162828026004357/a202512dec3110kex21.htm,2026-10-26
+parent_uei,DCA4UMKB63Q9,NORTHROP GRUMMAN SYSTEMS CORPORATION,Northrop Grumman,name_variant,,https://www.sec.gov/Archives/edgar/data/1133421/000113342126000003/noc-12312025xex21.htm,2026-10-26
+parent_uei,FBRTAX7SGND3,THE BOEING COMPANY,Boeing,name_variant,,https://www.sec.gov/Archives/edgar/data/12927/000162828026004357/a202512dec3110kex21.htm,2026-10-26
+parent_uei,HLE1E2KALJA5,"L3HARRIS MARITIME POWER & ENERGY SOLUTIONS, INC",L3Harris,name_variant,,https://www.sec.gov/Archives/edgar/data/202058/000020205826000015/a10-kexhibit21cy25xq4.htm,2026-10-26

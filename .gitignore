@@ -1,0 +1,12 @@
+data/raw/
+data/*.parquet
+data/*.duckdb
+data/*.duckdb.wal
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+data/pull.log
+data/probe/
+data/parquet/
+*.egg-info/

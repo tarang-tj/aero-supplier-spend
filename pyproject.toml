@@ -1,0 +1,19 @@
+[project]
+name = "aero-supplier-spend"
+version = "1.0.0"
+description = "Aerospace supplier spend on real DoD and NASA contract data from USAspending"
+requires-python = ">=3.12"
+dependencies = ["duckdb", "pandas", "pyarrow", "openpyxl", "matplotlib", "pypdf", "playwright"]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

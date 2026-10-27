@@ -1,0 +1,43 @@
+{
+ "filters": {
+  "agencies": [
+   {
+    "type": "awarding",
+    "tier": "toptier",
+    "name": "Department of Defense"
+   }
+  ],
+  "award_type_codes": [
+   "A",
+   "B",
+   "C",
+   "D",
+   "IDV_A",
+   "IDV_B",
+   "IDV_B_A",
+   "IDV_B_B",
+   "IDV_B_C",
+   "IDV_C",
+   "IDV_D",
+   "IDV_E"
+  ],
+  "time_period": [
+   {
+    "start_date": "2020-10-01",
+    "end_date": "2021-09-30"
+   }
+  ],
+  "naics_codes": {
+   "require": [
+    "3364"
+   ]
+  }
+ },
+ "row": {
+  "fy": 2021,
+  "definition": "naics",
+  "total": "78171080852.11",
+  "top5": "31348791201.83",
+  "top5_share": "0.4010"
+ }
+}
