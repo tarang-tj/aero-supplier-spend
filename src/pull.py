@@ -66,9 +66,10 @@ def pull_slice(agency, fy, retries=1):
         raise RuntimeError(f"{name}: {cnt['calculated_transaction_count']} rows exceeds the download cap")
     for attempt in range(retries + 1):
         job = post("download/transactions/", {"filters": f, "columns": scope.COLUMNS, "file_format": "csv"})
+        deadline = time.time() + 3 * 3600  # a stuck job must not hang a worker forever
         while True:
             st = fetch_json(job["status_url"])
-            if st.get("status") in ("finished", "failed"):
+            if st.get("status") in ("finished", "failed") or time.time() > deadline:
                 break
             time.sleep(15)
         if st.get("status") == "finished":
@@ -78,16 +79,18 @@ def pull_slice(agency, fy, retries=1):
     else:
         raise RuntimeError(f"{name}: download failed after retries")
     zpath = RAW / f"{name}.zip"
+    part = zpath.with_suffix(".zip.part")  # renamed only after the row check passes
     for i in range(4):
         try:
-            urllib.request.urlretrieve(job["file_url"], zpath)
+            urllib.request.urlretrieve(job["file_url"], part)
             break
         except (urllib.error.URLError, TimeoutError, ConnectionError):
             if i == 3:
                 raise
             time.sleep(30)
-    rows = count_prime_rows(zpath)
+    rows = count_prime_rows(part)
     check_rows(rows, cnt["calculated_transaction_count"])
+    part.replace(zpath)
     return {"slice": name, "file_name": job["file_name"], "prime_rows": rows,
             "api_count": cnt["calculated_transaction_count"],
             "zip_sha256": hashlib.sha256(zpath.read_bytes()).hexdigest(),
@@ -103,7 +106,7 @@ def done_slices():
 def record(row):
     new = not MANIFEST.exists()
     with MANIFEST.open("a", newline="") as fh:
-        w = csv.DictWriter(fh, fieldnames=FIELDS)
+        w = csv.DictWriter(fh, fieldnames=FIELDS, restval="")
         if new:
             w.writeheader()
         w.writerow(row)
@@ -119,6 +122,7 @@ def run(todo, workers):
                 record(row)
                 print(f"{name}: ok {row['prime_rows']} rows", flush=True)
             except Exception as e:  # noqa: BLE001 - one bad slice must not stop the others
+                record({"slice": name, "status": f"failed: {e}"[:200]})
                 print(f"{name}: FAILED {e}", flush=True)
 
 
@@ -129,6 +133,8 @@ def main():
     ap.add_argument("--fy", type=int)
     ap.add_argument("--workers", type=int, default=3)
     a = ap.parse_args()
+    if not a.all and (a.agency is None or a.fy is None):
+        ap.error("give --all, or both --agency and --fy")
     done = done_slices()
     todo = scope.slices() if a.all else [(a.agency, a.fy)]
     run([s for s in todo if f"{s[0]}-fy{s[1]}" not in done], a.workers)

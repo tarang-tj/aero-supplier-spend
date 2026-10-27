@@ -59,3 +59,18 @@ def test_code_map_flags_unknown(db):
     assert check_codes(db) == (set(), set())
     db.execute("UPDATE fact_txn SET pricing_code='Q' WHERE txn_key='T1'")
     assert check_codes(db)[0] == {"Q"}
+
+
+def test_load_only_verified_zips(tmp_path):
+    import hashlib
+
+    from src.load import verified_zips
+    good = write_zip(tmp_path / "nasa-fy2025.zip", [txn("A", 1)])
+    write_zip(tmp_path / "dod-fy2025.zip", [txn("B", 1)])  # on disk but failed in the manifest
+    sha = hashlib.sha256(good.read_bytes()).hexdigest()
+    man = tmp_path / "manifest.csv"
+    man.write_text(f"slice,zip_sha256,status\nnasa-fy2025,{sha},ok\ndod-fy2025,,failed: timeout\n")
+    assert verified_zips(man, tmp_path) == [good]
+    good.write_bytes(b"tampered")
+    with pytest.raises(ValueError, match="sha256"):
+        verified_zips(man, tmp_path)

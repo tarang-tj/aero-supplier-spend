@@ -57,8 +57,25 @@ def check_codes(con):
     return pricing - KNOWN_PRICING, competed - KNOWN_COMPETED
 
 
+def verified_zips(manifest=Path("data/manifest.csv"), raw=RAW):
+    """Only slices the manifest marks ok, and only if the file on disk matches its sha256."""
+    import csv
+    import hashlib
+    ok = {}
+    for r in csv.DictReader(manifest.read_text().splitlines()):
+        if r["status"] == "ok":
+            ok[r["slice"]] = r["zip_sha256"]
+    out = []
+    for name, sha in sorted(ok.items()):
+        z = raw / f"{name}.zip"
+        if hashlib.sha256(z.read_bytes()).hexdigest() != sha:
+            raise ValueError(f"{z} does not match the manifest sha256")
+        out.append(z)
+    return out
+
+
 def main():
-    for z in sorted(RAW.glob("*.zip")):
+    for z in verified_zips():
         out, n = zip_to_parquet(z)
         print(f"{z.name}: {n} rows -> {out}")
     con = build_db(str(PARQ / "*.parquet"))

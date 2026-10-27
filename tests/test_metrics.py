@@ -75,3 +75,19 @@ def test_fixed_price_development(frames):
     f = frames[0]["fixed_price_development"]
     r = f[f.period == "2025"].iloc[0]
     assert r.ultimate_parent == "CHARLIE" and r.fixed_rnd == 5
+
+
+def test_negative_net_supplier_excluded_from_hhi(tmp_path):
+    """Shares are of the net total (60+50-10 = 100); the negative supplier adds nothing to HHI:
+    60^2 + 50^2 = 6100."""
+    write_zip(tmp_path / "dod-fy2025.zip", [
+        txn("T1", 60, recipient_uei="U1", recipient_parent_uei="PA"),
+        txn("T2", 50, recipient_uei="U2", recipient_parent_uei="PB"),
+        txn("T3", -10, recipient_uei="U3", recipient_parent_uei="PC")])
+    zip_to_parquet(tmp_path / "dod-fy2025.zip", tmp_path)
+    con = build_db(str(tmp_path / "*.parquet"), tmp_path / "t.duckdb")
+    load_crosswalk(con, tmp_path / "none.csv")
+    build_supplier(con)
+    _, sens = run(con, tmp_path / "out")
+    r = sens[(sens.variant == "all") & (sens.level == "child") & (sens.period == "2025")].iloc[0]
+    assert round(r.hhi) == 6100 and r.top1_share == pytest.approx(0.6)

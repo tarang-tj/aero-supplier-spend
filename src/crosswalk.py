@@ -11,6 +11,9 @@ from pathlib import Path
 import duckdb
 
 XWALK = Path("data/crosswalk.csv")
+# Grouping key for unreviewed names: upper case, no punctuation, no corporate suffix.
+NORMALIZE = ("trim(regexp_replace(regexp_replace(upper({col}), '[.,]', '', 'g'), "
+             "' (INC|INCORPORATED|LLC|L ?L ?C|CORP|CORPORATION|CO|COMPANY|LTD|LIMITED|LP|L ?P|PLC)$', '', 'g'))")
 FIELDS = ["key_type", "key", "name_raw", "ultimate_parent", "basis", "ffrdc", "source_url", "reviewed_on"]
 
 
@@ -22,29 +25,46 @@ def load_crosswalk(con, path=XWALK):
             raise ValueError(f"bad key_type {r['key_type']!r} for {r['key']}")
         con.execute("INSERT INTO crosswalk VALUES (?, ?, ?, ?, ?)",
                     [r["key_type"], r["key"], r["ultimate_parent"], r["basis"], r.get("ffrdc") == "yes"])
-    dupes = con.execute("SELECT key_type, key FROM crosswalk GROUP BY 1, 2 HAVING count(DISTINCT ultimate_parent) > 1").fetchall()
+    dupes = con.execute("""SELECT key_type, key FROM crosswalk GROUP BY 1, 2
+                           HAVING count(DISTINCT ultimate_parent) > 1 OR count(DISTINCT ffrdc) > 1""").fetchall()
     if dupes:
         raise ValueError(f"conflicting crosswalk rows: {dupes}")
     return len(rows)
 
 
 def build_supplier(con):
-    """dim_supplier: one row per (recipient UEI, parent UEI) pair; fact_sup adds it to every txn."""
-    con.execute("""
+    """dim_supplier: one ultimate parent per recipient UEI, applied to every year.
+
+    Each (recipient UEI, reported parent UEI) pair is looked up in the crosswalk (recipient row,
+    then parent row). A UEI then takes the parent of its most recent reviewed pair; with no
+    reviewed pair, the most recent reported parent name, normalized so spelling variants
+    ("ACME, INC" vs "ACME INC.") group together. fact_sup adds the result to every transaction.
+    """
+    con.execute(f"""
         CREATE OR REPLACE TABLE dim_supplier AS
         WITH pairs AS (
-            SELECT recipient_uei, parent_uei,
-                   any_value(recipient_name) AS recipient_name, any_value(parent_name) AS parent_name
-            FROM fact_txn GROUP BY 1, 2)
-        SELECT p.*,
-               coalesce(r.ultimate_parent, pu.ultimate_parent, p.parent_name, p.recipient_name, 'UNKNOWN') AS ultimate_parent,
-               (r.key IS NOT NULL OR pu.key IS NOT NULL) AS reviewed,
-               coalesce(r.ffrdc, pu.ffrdc, false) AS ffrdc
-        FROM pairs p
-        LEFT JOIN (SELECT DISTINCT key, ultimate_parent, ffrdc FROM crosswalk WHERE key_type = 'recipient_uei') r
-               ON r.key = p.recipient_uei
-        LEFT JOIN (SELECT DISTINCT key, ultimate_parent, ffrdc FROM crosswalk WHERE key_type = 'parent_uei') pu
-               ON pu.key = p.parent_uei
+            SELECT recipient_uei, parent_uei, any_value(recipient_name) AS recipient_name,
+                   any_value(parent_name) AS parent_name, max(action_date) AS last_date
+            FROM fact_txn GROUP BY 1, 2),
+        looked AS (
+            SELECT p.*, coalesce(r.ultimate_parent, pu.ultimate_parent) AS mapped,
+                   coalesce(r.ffrdc, pu.ffrdc, false) AS ffrdc,
+                   {NORMALIZE.format(col="coalesce(p.parent_name, p.recipient_name, 'UNKNOWN')")} AS fallback
+            FROM pairs p
+            LEFT JOIN (SELECT DISTINCT key, ultimate_parent, ffrdc FROM crosswalk WHERE key_type = 'recipient_uei') r
+                   ON r.key = p.recipient_uei
+            LEFT JOIN (SELECT DISTINCT key, ultimate_parent, ffrdc FROM crosswalk WHERE key_type = 'parent_uei') pu
+                   ON pu.key = p.parent_uei),
+        pick AS (
+            SELECT recipient_uei, coalesce(mapped, fallback) AS ultimate_parent, mapped IS NOT NULL AS reviewed, ffrdc
+            FROM looked WHERE recipient_uei IS NOT NULL
+            QUALIFY row_number() OVER (PARTITION BY recipient_uei
+                                       ORDER BY (mapped IS NOT NULL) DESC, last_date DESC, parent_uei) = 1)
+        SELECT l.recipient_uei, l.parent_uei, l.recipient_name, l.parent_name,
+               coalesce(k.ultimate_parent, l.mapped, l.fallback) AS ultimate_parent,
+               coalesce(k.reviewed, l.mapped IS NOT NULL) AS reviewed,
+               coalesce(k.ffrdc, l.ffrdc) AS ffrdc
+        FROM looked l LEFT JOIN pick k ON k.recipient_uei = l.recipient_uei
     """)
     con.execute("""
         CREATE OR REPLACE TABLE fact_sup AS

@@ -23,6 +23,7 @@ NAMES = ("10-K", "L3Harris")
 
 def memo_tokens(text):
     text = re.sub(r"\{[^}]*\}", " ", text)  # markdown attributes such as {width=62%}
+    text = re.sub(r"(?m)^\d+\. ", " ", text)  # numbered-list markers
     text = re.sub(r"FY\d{4}", " ", text)
     for name in NAMES:
         text = text.replace(name, " ")
@@ -44,3 +45,18 @@ def test_every_memo_number_is_generated():
 def test_audit_catches_a_fake_number():
     assert unsupported("Lockheed holds 61.2% of FY2025 spend.", {"43%"}) == ["61.2%"]
     assert unsupported("In FY2025 and 2024, 43% of spend.", {"43%"}) == []
+
+
+@pytest.mark.skipif(not NUMBERS.exists(), reason="memo numbers not generated")
+def test_readme_findings_numbers_are_generated():
+    printed = {r["printed"] for r in csv.DictReader(NUMBERS.read_text().splitlines())}
+    text = Path("README.md").read_text()
+    findings = text[text.index("## Findings"):text.index("## Scope")]
+    head = text[:text.index("**Live page")]
+    assert unsupported(head + findings, printed) == []
+
+
+@pytest.mark.skipif(not Path("docs/memo.pdf").exists(), reason="memo not rendered")
+def test_memo_is_one_page():
+    from pypdf import PdfReader
+    assert len(PdfReader("docs/memo.pdf").pages) == 1

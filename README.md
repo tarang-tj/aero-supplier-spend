@@ -5,7 +5,7 @@ Who gets paid to build U.S. military and NASA aerospace, on what contract terms,
 **Live page:** https://tarang-tj.github.io/aero-supplier-spend/ · **Memo:** [docs/memo.pdf](docs/memo.pdf) · **Excel spend cube:** [docs/aero-supplier-spend.xlsx](docs/aero-supplier-spend.xlsx)
 
 ## Findings
-1. **Supplier records hide half the concentration.** DoD's largest aerospace supplier record holds 21% of obligations; rolled up to parent companies, Lockheed Martin holds 43% and the top five hold 83% (HHI 2,368).
+1. **Supplier records hide half the concentration.** DoD's largest aerospace supplier record holds 21% of obligations; rolled up to parent companies, Lockheed Martin holds 43% and the top five hold 82% (HHI 2,360).
 2. **Contract type follows the kind of work.** DoD puts 77% of aerospace dollars on fixed-price contracts but only 27% of R&D. NASA is 66% cost-type.
 3. **Most DoD aerospace dollars are not competed:** 87%, mostly justified as only one source.
 

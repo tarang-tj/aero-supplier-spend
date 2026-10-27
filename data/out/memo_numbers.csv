@@ -6,12 +6,12 @@ dod_child_top1_share,0.20677475824654415,21%,concentration.csv
 dod_child_top5_share,0.450511662539714,45%,concentration.csv
 dod_child_hhi,670.7203482835085,671,concentration.csv
 dod_child_top1,LOCKHEED MARTIN CORPORATION,LOCKHEED MARTIN CORPORATION,concentration.csv
-dod_ultimate_parent_top1_share,0.4282532843702271,43%,concentration.csv
-dod_ultimate_parent_top5_share,0.8255912663920212,83%,concentration.csv
-dod_ultimate_parent_hhi,2367.8098471212616,"2,368",concentration.csv
+dod_ultimate_parent_top1_share,0.4287828156499339,43%,concentration.csv
+dod_ultimate_parent_top5_share,0.821488101955903,82%,concentration.csv
+dod_ultimate_parent_hhi,2359.665683359676,"2,360",concentration.csv
 dod_ultimate_parent_top1,Lockheed Martin,Lockheed Martin,concentration.csv
 dod_fy25_child_top1_share,0.26331241462410493,26.3%,concentration.csv
-dod_fy25_ultimate_parent_top1_share,0.48204777245372926,48.2%,concentration.csv
+dod_fy25_ultimate_parent_top1_share,0.4840410952761924,48.4%,concentration.csv
 dod_all_fixed_share,0.765702135454053,77%,pricing_mix.csv
 dod_all_cost_share,0.23286873798161198,23%,pricing_mix.csv
 dod_all_total,499447940821.21,$499.4B,pricing_mix.csv
@@ -29,19 +29,19 @@ dod_cost_plus_share,0.2259420672779912,23%,pricing_mix.csv
 dod_tm_share,0.0014291265643349876,0.1%,pricing_mix.csv
 dod_not_competed_share,0.8677799263035111,87%,competition.csv
 dod_single_offer_share,0.6267442300335273,63%,competition.csv
-dod_top_parent_not_competed,0.9496411437053579,95%,supplier_profile.csv
+dod_top_parent_not_competed,0.9496942171313167,95%,supplier_profile.csv
 dod_top_parent_children,47,47,supplier_profile.csv
-dod_excl_ffrdc_top5_share,0.8255912663920212,83%,concentration_variants.csv
-dod_excl_idv_top5_share,0.8255912663920212,83%,concentration_variants.csv
+dod_excl_ffrdc_top5_share,0.821488101955903,82%,concentration_variants.csv
+dod_excl_idv_top5_share,0.821488101955903,82%,concentration_variants.csv
 dod_idv_share,0.0,0.0%,concentration_variants.csv
 nasa_total,101451407912.33,$101.5B,concentration.csv
 nasa_child_top1_share,0.11861559757829117,12%,concentration.csv
 nasa_child_top5_share,0.3658717978293212,37%,concentration.csv
-nasa_child_hhi,371.10135328913105,371,concentration.csv
+nasa_child_hhi,371.1013532891315,371,concentration.csv
 nasa_child_top1,CALIFORNIA INSTITUTE OF TECHNOLOGY,CALIFORNIA INSTITUTE OF TECHNOLOGY,concentration.csv
 nasa_ultimate_parent_top1_share,0.12113466492835541,12%,concentration.csv
-nasa_ultimate_parent_top5_share,0.42640639890461696,43%,concentration.csv
-nasa_ultimate_parent_hhi,475.5825617195437,476,concentration.csv
+nasa_ultimate_parent_top5_share,0.4364487216030896,44%,concentration.csv
+nasa_ultimate_parent_hhi,489.10168079975864,489,concentration.csv
 nasa_ultimate_parent_top1,Caltech (JPL),Caltech (JPL),concentration.csv
 nasa_fy25_child_top1_share,0.10765628191640433,10.8%,concentration.csv
 nasa_fy25_ultimate_parent_top1_share,0.11062143386891485,11.1%,concentration.csv
@@ -64,11 +64,11 @@ nasa_not_competed_share,0.31123272860782547,31%,competition.csv
 nasa_single_offer_share,0.23537402802123003,24%,competition.csv
 nasa_top_parent_not_competed,0.9830108936034001,98%,supplier_profile.csv
 nasa_top_parent_children,2,2,supplier_profile.csv
-nasa_excl_ffrdc_top5_share,0.41725700175069974,42%,concentration_variants.csv
-nasa_excl_idv_top5_share,0.44352229892256284,44%,concentration_variants.csv
+nasa_excl_ffrdc_top5_share,0.4290167246509172,43%,concentration_variants.csv
+nasa_excl_idv_top5_share,0.4537442016035795,45%,concentration_variants.csv
 nasa_idv_share,0.2392159882321404,23.9%,concentration_variants.csv
 dod_only_one_source_share,0.7802615810063184,78%,competition_reasons.csv
-dod_reviewed_share,0.9185926123350164,92%,fact_sup.reviewed
+dod_reviewed_share,0.9282627703227514,93%,fact_sup.reviewed
 dod_rnd_fixed_total,8351038441.59,$8.4B,pricing_mix.csv
 dod_fixed_rnd_lockheed_martin,4277027471.65,$4.3B,fixed_price_development.csv
 dod_fixed_rnd_lockheed_martin_share,0.5121551650809637,51%,fixed_price_development.csv
@@ -77,7 +77,7 @@ dod_fixed_rnd_textron_share,0.3116968562899349,31%,fixed_price_development.csv
 dod_fixed_rnd_boeing,932080658.39,$0.9B,fixed_price_development.csv
 dod_fixed_rnd_boeing_share,0.11161254554260393,11%,fixed_price_development.csv
 nasa_only_one_source_share,0.41264245666470717,41%,competition_reasons.csv
-nasa_reviewed_share,0.6671322996463241,67%,fact_sup.reviewed
+nasa_reviewed_share,0.6784818137532649,68%,fact_sup.reviewed
 nasa_rnd_fixed_total,11521638956.67,$11.5B,pricing_mix.csv
 nasa_fixed_rnd_spacex,3168829324.94,$3.2B,fixed_price_development.csv
 nasa_fixed_rnd_spacex_share,0.27503286093733487,28%,fixed_price_development.csv
@@ -86,7 +86,7 @@ nasa_fixed_rnd_blue_origin_share,0.17793285371810647,18%,fixed_price_development
 nasa_fixed_rnd_northrop_grumman,1195145583.86,$1.2B,fixed_price_development.csv
 nasa_fixed_rnd_northrop_grumman_share,0.10373051857940031,10%,fixed_price_development.csv
 child_records,11227,"11,227",fact_sup
-parent_companies,10839,"10,839",fact_sup
-crosswalk_rows,152,152,crosswalk.csv
+parent_companies,9803,"9,803",fact_sup
+crosswalk_rows,159,159,crosswalk.csv
 dod_fy25_naics_child_top5,0.5175,52%,scope_sensitivity.csv
 dod_fy25_psc_child_top5,0.6041,60%,scope_sensitivity.csv

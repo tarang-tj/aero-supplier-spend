@@ -72,7 +72,8 @@ transactions, FY2021 to FY2025, from USAspending.gov. By Tarang Jammalamadaka.</
 <p>As reported, DoD's largest aerospace supplier record holds {n['dod_child_top1_share']} of obligations and the top five
 hold {n['dod_child_top5_share']} (HHI {n['dod_child_hhi']}). Rolled up to parent companies, Lockheed Martin holds
 {n['dod_ultimate_parent_top1_share']}, the top five hold {n['dod_ultimate_parent_top5_share']}, and HHI is
-{n['dod_ultimate_parent_hhi']}, above the 1,800 level the 2023 Merger Guidelines call highly concentrated. NASA's
+{n['dod_ultimate_parent_hhi']}. For a sense of scale only, the 2023 Merger Guidelines treat a market above 1,800 as highly
+concentrated; this is one buyer's spend, not a market. NASA's
 supplier base is far flatter: top five {n['nasa_ultimate_parent_top5_share']}, HHI {n['nasa_ultimate_parent_hhi']}.</p>
 <img src="charts/rollup-effect.svg" alt="Top five supplier share as reported vs rolled up: DoD {n['dod_child_top5_share']} to {n['dod_ultimate_parent_top5_share']}, NASA {n['nasa_child_top5_share']} to {n['nasa_ultimate_parent_top5_share']}">
 <img src="charts/hhi-trend.svg" alt="HHI by fiscal year at record and parent level for DoD and NASA">
@@ -83,14 +84,14 @@ supplier base is far flatter: top five {n['nasa_ultimate_parent_top5_share']}, H
 <p>DoD puts {n['dod_all_fixed_share']} of aerospace dollars on fixed-price contracts ({n['dod_ffp_share']} on firm fixed
 price alone) but only {n['dod_rnd_fixed_share']} of R&amp;D; {n['dod_rnd_cost_share']} of R&amp;D is cost-reimbursement.
 NASA runs the other way: {n['nasa_all_cost_share']} cost-type overall. Time and materials is {n['dod_tm_share']} at DoD
-and {n['nasa_tm_share']} at NASA. Boeing's 10-K for 2025 reports $5,013 million of 2024 losses on its five major
-fixed-price development programs, which is the risk this pattern prices in.</p>
+and {n['nasa_tm_share']} at NASA. Fixed price puts cost overruns on the supplier, which is why development work stays
+mostly cost-type. One example: in its annual report (10-K) for 2025, Boeing reports $5,013 million of losses in 2024 on its
+five major fixed-price development programs.</p>
 <img src="charts/pricing-mix.svg" alt="Contract type by work type: DoD R&amp;D {n['dod_rnd_fixed_share']} fixed-price, products {n['dod_product_fixed_share']}; NASA R&amp;D {n['nasa_rnd_fixed_share']} fixed-price">
 
 <h2>3. Most DoD aerospace dollars are not competed</h2>
 <p>{n['dod_not_competed_share']} of DoD aerospace obligations were not competed, and {n['dod_only_one_source_share']} of
-those cite only one source (FAR 6.302-1). {n['dod_single_offer_share']} of DoD dollars went to actions with a single
-offer. At NASA, {n['nasa_not_competed_share']} was not competed.</p>
+those cite only one source (FAR 6.302-1). At NASA, {n['nasa_not_competed_share']} was not competed.</p>
 <img src="charts/not-competed.svg" alt="Share not competed by year: DoD about {n['dod_not_competed_share']}, NASA about {n['nasa_not_competed_share']}">
 
 <h2>Method</h2>
@@ -99,7 +100,7 @@ manufacturing), FY2021 to FY2025, pulled from the USAspending API with IDV oblig
 {n['nasa_idv_share']} of NASA dollars). Each agency-year sums to USAspending's own aggregate to the cent.
 {n['child_records']} supplier records were rolled to parent companies with a {n['crosswalk_rows']}-row crosswalk sourced
 to 10-K subsidiary lists, acquisition announcements and NSF's FFRDC list, covering {n['dod_reviewed_share']} of DoD and
-{n['nasa_reviewed_share']} of NASA dollars. Today's owner is applied to every year. A product-code definition of DoD
+{n['nasa_reviewed_share']} of NASA dollars. Each supplier record gets one parent, today's owner, applied to every year. A product-code definition of DoD
 aerospace raises the FY2025 top-five record share from {n['dod_fy25_naics_child_top5']} to {n['dod_fy25_psc_child_top5']},
 so NAICS 3364 is the conservative boundary. HHI here measures one buyer's spend, not a market.</p>
 <footer>Data: USAspending.gov (public domain). Code: <a href="{REPO}">{REPO}</a>.</footer>

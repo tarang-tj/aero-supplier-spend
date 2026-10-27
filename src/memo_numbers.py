@@ -59,7 +59,7 @@ def build(con, out=OUT):
         a = m.loc["all"]
         add(f"{ag}_ffp_share", a.ffp_only / a.total, pct(a.ffp_only / a.total), "pricing_mix.csv")
         add(f"{ag}_cost_plus_share", a.cost_plus_only / a.total, pct(a.cost_plus_only / a.total), "pricing_mix.csv")
-        add(f"{ag}_tm_share", (a.tm or 0) / a.total, pct((a.tm or 0) / a.total, 1), "pricing_mix.csv")
+        add(f"{ag}_tm_share", (0 if pd.isna(a.tm) else a.tm) / a.total, pct((0 if pd.isna(a.tm) else a.tm) / a.total, 1), "pricing_mix.csv")
         cp = comp[(comp.agency == ag) & (comp.period == P5)].iloc[0]
         add(f"{ag}_not_competed_share", cp.not_competed / cp.total, pct(cp.not_competed / cp.total), "competition.csv")
         add(f"{ag}_single_offer_share", cp.single_offer / cp.total, pct(cp.single_offer / cp.total), "competition.csv")
