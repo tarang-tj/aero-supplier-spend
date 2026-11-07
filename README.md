@@ -4,19 +4,19 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/img/hero-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="docs/img/hero-light.svg">
-  <img src="docs/img/hero-dark.svg" width="100%" alt="aero-supplier-spend: $600.9B in aerospace contracts, reconciled to the cent">
+  <img src="docs/img/hero-dark.svg" alt="aero-supplier-spend: $600.9B in aerospace contracts, reconciled to the cent">
 </picture>
 
 [![gate](https://github.com/tarang-tj/aero-supplier-spend/actions/workflows/ci.yml/badge.svg)](https://github.com/tarang-tj/aero-supplier-spend/actions/workflows/ci.yml)
-[![live page](https://img.shields.io/badge/live-page-f0a500)](https://tarang-tj.github.io/aero-supplier-spend/)
+[![live page](https://img.shields.io/badge/live-page-orange)](https://tarang-tj.github.io/aero-supplier-spend/)
 [![license](https://img.shields.io/github/license/tarang-tj/aero-supplier-spend)](LICENSE)
-[![data](https://img.shields.io/badge/data-USAspending.gov-555)](https://www.usaspending.gov/)
+[![data](https://img.shields.io/badge/data-USAspending.gov-lightgrey)](https://www.usaspending.gov/)
 
 **Who really gets paid to build U.S. military and NASA aerospace?** 874,769 real contract transactions, FY2021 to FY2025, $600.9B, reconciled to USAspending's own totals to the cent. Take the supplier records at face value and the top five DoD aerospace suppliers hold 45%. Roll them up to parent companies and it's 82%.
 
-![Top-5 supplier share of obligations, FY2021-25: DoD 45% as reported vs 82% rolled up to parent; NASA 37% vs 44%](docs/charts/rollup-effect.png)
+![Top five supplier share of obligations, FY2021 to FY2025: DoD 45% as reported vs 82% rolled up to parent; NASA 37% vs 44%](docs/charts/rollup-effect.png)
 
-**[Live page](https://tarang-tj.github.io/aero-supplier-spend/)** · [Memo](docs/memo.pdf) · [Excel spend cube](docs/aero-supplier-spend.xlsx)
+**Live page:** https://tarang-tj.github.io/aero-supplier-spend/ · **Memo:** [docs/memo.pdf](docs/memo.pdf) · **Excel spend cube:** [docs/aero-supplier-spend.xlsx](docs/aero-supplier-spend.xlsx)
 
 ## Findings
 1. **Supplier records hide half the concentration.** DoD's largest aerospace supplier record holds 21% of obligations; rolled up to parent companies, Lockheed Martin holds 43% and the top five hold 82% (HHI 2,360).
