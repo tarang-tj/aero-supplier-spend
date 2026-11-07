@@ -60,7 +60,10 @@ def test_dropped_row_goes_red(fixture_wb):
     assert check_workbook(fixture_wb, 75)
 
 
-@pytest.mark.skipif(not Path("docs/aero-supplier-spend.xlsx").exists(), reason="real workbook not built")
+@pytest.mark.skipif(
+    not (Path("docs/aero-supplier-spend.xlsx").exists() and Path("data/spend.duckdb").exists()),
+    reason="real workbook or database not built",
+)
 def test_real_workbook_matches_db():
     con = duckdb.connect("data/spend.duckdb", read_only=True)
     total = con.execute("SELECT sum(obligation) FROM fact_sup").fetchone()[0]

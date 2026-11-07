@@ -1,0 +1,22 @@
+name: gate
+# Runs lint, tests and the page probe from `make gate` on a clean checkout.
+# data/spend.duckdb and the raw USAspending downloads are not committed, so the
+# tests that need them skip, and the networked reconcile stays local.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m venv .venv && .venv/bin/pip install -e ".[dev]"
+      - run: .venv/bin/playwright install --with-deps chromium
+      - run: make lint test probe
