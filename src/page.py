@@ -8,13 +8,15 @@ from pathlib import Path
 
 import pandas as pd
 
+from src.hero import HERO_CSS, HERO_JS, build_hero
+
 OUT = Path("docs/index.html")
 REPO = "https://github.com/tarang-tj/aero-supplier-spend"
 CSS = """
-:root { --bg:#fcfcfb; --ink:#0b0b0b; --muted:#52514e; --rule:#e6e5e0; --accent:#2a78d6; }
+:root { --bg:#f6f1e7; --ink:#1d1b17; --muted:#5f584e; --rule:#e2d9c8; --accent:#2f6db5; }
 * { box-sizing: border-box; }
-body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 Arial, Helvetica, sans-serif; }
-main { max-width: 860px; margin: 0 auto; padding: 32px 16px 64px; }
+body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.55 "Schibsted Grotesk", Arial, Helvetica, sans-serif; }
+main { max-width: 980px; margin: 0 auto; padding: 32px 16px 64px; }
 h1 { font-size: 1.9rem; line-height:1.2; margin: 0 0 8px; }
 h2 { font-size: 1.25rem; margin: 40px 0 8px; }
 .lede { color: var(--muted); margin: 0 0 20px; }
@@ -22,7 +24,7 @@ h2 { font-size: 1.25rem; margin: 40px 0 8px; }
 .stat { border-top: 3px solid var(--accent); padding: 8px 0; }
 .stat b { display:block; font-size: 1.6rem; }
 .stat span { color: var(--muted); font-size: .9rem; }
-img { width:100%; height:auto; border:1px solid var(--rule); background:#fcfcfb; }
+img { width:100%; height:auto; border:1px solid var(--rule); background:#fcfcfb; border-radius:4px; }
 table { width:100%; border-collapse: collapse; font-size:.9rem; margin: 12px 0; }
 th, td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--rule); }
 td.n, th.n { text-align:right; font-variant-numeric: tabular-nums; }
@@ -66,8 +68,12 @@ def build():
     n = numbers()
     page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Aerospace supplier spend</title><style>{CSS}</style></head><body><main>
-<h1>Who supplies U.S. military and NASA aerospace?</h1>
+<title>Aerospace supplier spend</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;800&display=swap" rel="stylesheet">
+<style>{CSS}{HERO_CSS}</style></head><body><main>
+{build_hero(n)}
+<h2>Who supplies U.S. military and NASA aerospace?</h2>
 <p class=lede>Supplier concentration, contract type and competition on {n['rows']} real federal contract
 transactions, FY2021 to FY2025, from USAspending.gov. By Tarang Jammalamadaka.</p>
 <p class=links><a href="memo.pdf">One-page memo (PDF)</a><a href="aero-supplier-spend.xlsx">Excel spend cube</a>
@@ -121,7 +127,7 @@ to 10-K subsidiary lists, acquisition announcements and NSF's FFRDC list, coveri
 aerospace raises the FY2025 top-five record share from {n['dod_fy25_naics_child_top5']} to {n['dod_fy25_psc_child_top5']},
 so NAICS 3364 is the conservative boundary. HHI here measures one buyer's spend, not a market.</p>
 <footer>Data: USAspending.gov (public domain). Code: <a href="{REPO}">{REPO}</a>.</footer>
-</main></body></html>"""
+</main><script>{HERO_JS}</script></body></html>"""
     OUT.write_text(page)
     return OUT
 
