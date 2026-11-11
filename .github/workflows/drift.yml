@@ -1,0 +1,39 @@
+name: drift
+# Monthly: compare USAspending's live totals with the pull this analysis is built on (src/drift.py).
+# Never commits or republishes. When something moved, it opens one issue (or comments on the open one)
+# with the report; when the API itself fails, the job goes red.
+on:
+  schedule:
+    - cron: "17 15 9 * *"  # the 9th of each month, 15:17 UTC
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m venv .venv && .venv/bin/pip install -e .
+      - name: check
+        id: check
+        run: |
+          set +e
+          .venv/bin/python -I -m src.drift --out report.md
+          code=$?
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+          if [ "$code" -ne 0 ] && [ "$code" -ne 3 ]; then exit "$code"; fi
+      - name: open or update the drift issue
+        if: steps.check.outputs.code == '3'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="USAspending drift check"
+          n=$(gh issue list --state open --search "in:title \"$title\"" --json number -q '.[0].number')
+          if [ -n "$n" ]; then gh issue comment "$n" --body-file report.md; else gh issue create --title "$title" --body-file report.md; fi
+      - run: cat report.md >> "$GITHUB_STEP_SUMMARY"
+        if: always()
