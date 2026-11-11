@@ -102,6 +102,12 @@ def build(con, out=OUT):
             for m in ("top1_share", "top5_share"):
                 add(f"boeing_sub_{lvl}_{m}", float(b[f"{lvl}_{m}"]), pct(float(b[f"{lvl}_{m}"])), subs.name)
         add("boeing_sub_parent_top1", b["parent_top1"], b["parent_top1"], subs.name)
+    # Pull date: the reconcile-to-the-cent claim holds as of this pull (USAspending revises later).
+    man = Path("data/manifest.csv")
+    if man.exists():
+        stamp = pd.to_datetime(pd.read_csv(man)["pulled_at"], utc=True).max().tz_convert("America/Los_Angeles")
+        add("pull_date", stamp.date().isoformat(), f"{stamp:%b} {stamp.day}, {stamp.year}", man.name)
+        add("pull_day", stamp.day, str(stamp.day), man.name)  # token form the number audit sees
     s25 = scope_s[scope_s.fy == 2025].set_index("definition")
     for d in ("naics", "psc"):
         add(f"dod_fy25_{d}_child_top5", s25.loc[d, "top5_share"], pct(s25.loc[d, "top5_share"]), "scope_sensitivity.csv")

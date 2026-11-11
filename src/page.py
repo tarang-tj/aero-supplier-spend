@@ -73,7 +73,7 @@ transactions, FY2021 to FY2025, from USAspending.gov. By Tarang Jammalamadaka.</
 <p class=links><a href="memo.pdf">One-page memo (PDF)</a><a href="aero-supplier-spend.xlsx">Excel spend cube</a>
 <a href="{REPO}">Code and method</a></p>
 <div class=stats>
-<div class=stat><b>{n['total']}</b><span>obligations analyzed, reconciled to USAspending to the cent</span></div>
+<div class=stat><b>{n['total']}</b><span>obligations analyzed, reconciled to USAspending to the cent as of the {n['pull_date']} pull</span></div>
 <div class=stat><b>{n['dod_ultimate_parent_top1_share']}</b><span>Lockheed Martin's share of DoD aerospace, once its {n['dod_top_parent_children']} records are combined</span></div>
 <div class=stat><b>{n['dod_rnd_fixed_share']}</b><span>of DoD aerospace R&amp;D on fixed-price contracts, vs {n['dod_product_fixed_share']} of products</span></div>
 <div class=stat><b>{n['dod_not_competed_share']}</b><span>of DoD aerospace dollars not competed</span></div>
@@ -114,7 +114,7 @@ those cite only one source (FAR 6.302-1). At NASA, {n['nasa_not_competed_share']
 <h2>Method</h2>
 <p>Every NASA contract transaction and every DoD transaction in NAICS 3364 (aerospace product and parts
 manufacturing), FY2021 to FY2025, pulled from the USAspending API with IDV obligations included (they are
-{n['nasa_idv_share']} of NASA dollars). Each agency-year sums to USAspending's own aggregate to the cent.
+{n['nasa_idv_share']} of NASA dollars). Each agency-year sums to USAspending's own aggregate to the cent, as of the {n['pull_date']} pull.
 {n['child_records']} supplier records were rolled to parent companies with a {n['crosswalk_rows']}-row crosswalk sourced
 to 10-K subsidiary lists, acquisition announcements and NSF's FFRDC list, covering {n['dod_reviewed_share']} of DoD and
 {n['nasa_reviewed_share']} of NASA dollars. Each supplier record gets one parent, today's owner, applied to every year. A product-code definition of DoD

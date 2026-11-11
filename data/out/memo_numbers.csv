@@ -96,5 +96,7 @@ boeing_sub_child_top5_share,0.29091567114613315,29%,boeing_subawards_summary.csv
 boeing_sub_parent_top1_share,0.16943801613324408,17%,boeing_subawards_summary.csv
 boeing_sub_parent_top5_share,0.41198619946037063,41%,boeing_subawards_summary.csv
 boeing_sub_parent_top1,RTX,RTX,boeing_subawards_summary.csv
+pull_date,2026-10-26,"Oct 26, 2026",manifest.csv
+pull_day,26,26,manifest.csv
 dod_fy25_naics_child_top5,0.5175,52%,scope_sensitivity.csv
 dod_fy25_psc_child_top5,0.6041,60%,scope_sensitivity.csv
