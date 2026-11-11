@@ -12,6 +12,8 @@
 [![license](https://img.shields.io/github/license/tarang-tj/aero-supplier-spend)](LICENSE)
 [![data](https://img.shields.io/badge/data-USAspending.gov-lightgrey)](https://www.usaspending.gov/)
 
+<a href="https://tarang-tj.github.io/aero-supplier-spend/"><img src="docs/img/rollup.gif" width="100%" alt="The live page: every DoD supplier record as a sliver of one bar. As reported, the top five hold 45%; rolled up to parent companies, Lockheed Martin's records slide into one block and the top five hold 82%."></a>
+
 **Who really gets paid to build U.S. military and NASA aerospace?** 874,769 real contract transactions, FY2021 to FY2025, $600.9B, reconciled to USAspending's own totals to the cent as of the October 26, 2026 pull. Take the supplier records at face value and the top five DoD aerospace suppliers hold 45%. Roll them up to parent companies and it's 82%.
 
 ![Top five supplier share of obligations, FY2021 to FY2025: DoD 45% as reported vs 82% rolled up to parent; NASA 37% vs 44%](docs/charts/rollup-effect.png)
