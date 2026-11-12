@@ -26,6 +26,8 @@ footer { color: var(--muted); font-size:.85rem; margin-top: 48px; }
 
 .hero { padding: 8px 0 28px; }
 .kicker { color:#b6401f; font-weight:600; margin:0; }
+.latest { margin: 10px 0 0; padding: 10px 14px; border-left: 3px solid #b6401f; color: var(--muted); font-size: .95rem; max-width: 70ch; }
+.latest b { color: var(--ink, inherit); }
 .hero h1 { font-size: clamp(2.1rem, 6vw, 4.2rem); line-height:1.03; letter-spacing:-.02em; font-weight:800; margin: 12px 0 18px; max-width: 16ch; }
 .reveal { margin: 28px 0 8px; }
 .readout { display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:10px; }
@@ -58,6 +60,7 @@ one looks like 21% of the money. Roll every record up to its parent company and 
  <div class=toggle role=group aria-label="View"><button type=button data-to=0 aria-pressed=false>As reported</button><button type=button data-to=1 aria-pressed=true>Rolled up</button></div>
 </div>
 <p class=note>Each sliver is one supplier record in USAspending, width by dollars. Source: USAspending.gov, 874,769 DoD and NASA contract transactions, reconciled to USAspending to the cent as of the Oct 26, 2026 pull.</p>
+<!-- latest:start --><p class=latest><b>FY2026 so far:</b> DoD $115.5B, top five parent companies 81.8% (FY2025 alone: 82.7%), Lockheed Martin 35.4%. Outside the FY2021 to FY2025 study and incomplete until Dec 29, 2026, because DoD reports with a 90-day delay; re-pulled monthly from the bulk download (106,637 rows; USAspending's own count says 108,346).</p><!-- latest:end -->
 </section>
 <h2>Who supplies U.S. military and NASA aerospace?</h2>
 <p class=lede>Supplier concentration, contract type and competition on 874,769 real federal contract

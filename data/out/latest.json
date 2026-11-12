@@ -1,0 +1,26 @@
+{
+  "agencies": {
+    "dod": {
+      "api_count": 108346,
+      "bulk_rows": 106637,
+      "child_top5_share": 0.4916,
+      "parent_top1": "Lockheed Martin",
+      "parent_top1_share": 0.3535,
+      "parent_top5_share": 0.8175,
+      "reviewed_share": 0.9051,
+      "total": 115535015268.62
+    },
+    "nasa": {
+      "api_count": 23500,
+      "bulk_rows": 23497,
+      "child_top5_share": 0.313,
+      "parent_top1": "Caltech (JPL)",
+      "parent_top1_share": 0.104,
+      "parent_top5_share": 0.3728,
+      "reviewed_share": 0.6137,
+      "total": 21397465718.77
+    }
+  },
+  "complete_after": "2026-12-29",
+  "fy": 2026
+}

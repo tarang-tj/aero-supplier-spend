@@ -7,6 +7,7 @@ slivers next to their parent. Widths never change, only positions, so nothing on
 Positions for both states are computed here; the page's script only switches between them.
 """
 import html
+import json
 
 import duckdb
 
@@ -53,6 +54,14 @@ def layout(total, rows, parents):
     return slivers, rest
 
 
+def latest_block():
+    """The FY2026-so-far line (src/latest.py), or empty markers until it has run."""
+    from src import latest
+    if not latest.OUT.exists():
+        return latest.START + latest.END
+    return latest.block(json.loads(latest.OUT.read_text()))
+
+
 def build_hero(n, db="data/spend.duckdb"):
     total, rows, parents = records(db)
     slivers, rest = layout(total, rows, parents)
@@ -76,12 +85,15 @@ one looks like {n['dod_child_top1_share']} of the money. Roll every record up to
  <div class=toggle role=group aria-label="View"><button type=button data-to=0 aria-pressed=false>As reported</button><button type=button data-to=1 aria-pressed=true>Rolled up</button></div>
 </div>
 <p class=note>Each sliver is one supplier record in USAspending, width by dollars. Source: USAspending.gov, {n['rows']} DoD and NASA contract transactions, reconciled to USAspending to the cent as of the {n['pull_date']} pull.</p>
+{latest_block()}
 </section>"""
 
 
 HERO_CSS = """
 .hero { padding: 8px 0 28px; }
 .kicker { color:#b6401f; font-weight:600; margin:0; }
+.latest { margin: 10px 0 0; padding: 10px 14px; border-left: 3px solid #b6401f; color: var(--muted); font-size: .95rem; max-width: 70ch; }
+.latest b { color: var(--ink, inherit); }
 .hero h1 { font-size: clamp(2.1rem, 6vw, 4.2rem); line-height:1.03; letter-spacing:-.02em; font-weight:800; margin: 12px 0 18px; max-width: 16ch; }
 .reveal { margin: 28px 0 8px; }
 .readout { display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:10px; }

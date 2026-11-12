@@ -58,7 +58,9 @@ def check_rows(prime_rows, api_count):
         raise ValueError(f"prime rows {prime_rows} != api count {api_count}")
 
 
-def pull_slice(agency, fy, retries=1):
+def pull_slice(agency, fy, retries=1, raw=None, strict=True):
+    """strict=False keeps a bulk file whose row count differs from download/count (src.latest records both)."""
+    raw = raw or RAW
     name = f"{agency}-fy{fy}"
     f = scope.filters(agency, fy)
     cnt = post("download/count/", {"filters": f})
@@ -78,7 +80,7 @@ def pull_slice(agency, fy, retries=1):
         time.sleep(600)
     else:
         raise RuntimeError(f"{name}: download failed after retries")
-    zpath = RAW / f"{name}.zip"
+    zpath = raw / f"{name}.zip"
     part = zpath.with_suffix(".zip.part")  # renamed only after the row check passes
     for i in range(4):
         try:
@@ -89,7 +91,8 @@ def pull_slice(agency, fy, retries=1):
                 raise
             time.sleep(30)
     rows = count_prime_rows(part)
-    check_rows(rows, cnt["calculated_transaction_count"])
+    if strict:
+        check_rows(rows, cnt["calculated_transaction_count"])
     part.replace(zpath)
     return {"slice": name, "file_name": job["file_name"], "prime_rows": rows,
             "api_count": cnt["calculated_transaction_count"],

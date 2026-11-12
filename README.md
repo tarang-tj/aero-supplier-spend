@@ -29,7 +29,8 @@
 ## Scope
 - Every NASA contract transaction, and every DoD transaction in NAICS 3364 (aerospace product and parts manufacturing).
 - Award types A-D plus all IDV types. IDV obligations are 23.9% of NASA dollars; leaving them out silently undercounts.
-- Obligations net of deobligations, by federal fiscal year of the action date. FY2026 is excluded (DoD data publishes with a 90-day delay).
+- Obligations net of deobligations, by federal fiscal year of the action date. FY2026 is excluded from the study (DoD data publishes with a 90-day delay).
+- FY2026 as reported so far is shown in one line under the hero, outside the study: `src/latest.py` re-pulls it from the bulk download each month (`.github/workflows/latest.yml`), computes it with the study's own SQL and crosswalk, and says the year is incomplete until DoD's delay has passed.
 
 ## Reproduce
 ```

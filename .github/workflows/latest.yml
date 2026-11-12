@@ -1,0 +1,71 @@
+name: latest
+# Monthly: re-pull FY2026 (DoD NAICS 3364 and all NASA) from the USAspending bulk download, recompute
+# its concentration with the study's own SQL and crosswalk (src/latest.py), patch the one "FY2026 so
+# far" line on the page, run the full gate, and commit only when latest.json changed AND the gate
+# passed. The FY2021-25 study is never touched. A failed pull or gate opens (or comments on) one issue.
+on:
+  schedule:
+    - cron: "41 15 10 * *"  # the 10th, the day after the drift check
+  workflow_dispatch:
+    inputs:
+      drill:
+        description: "Failure drill: point the API at a dead address (red run, issue, no commit)"
+        type: boolean
+        default: false
+permissions:
+  contents: write
+  issues: write
+concurrency: latest
+jobs:
+  latest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m venv .venv && .venv/bin/pip install -e ".[dev]"
+      - name: pull and recompute FY2026
+        id: latest
+        env:
+          AERO_API: ${{ inputs.drill && 'http://127.0.0.1:9/api/v2/' || '' }}
+        run: |
+          set +e
+          .venv/bin/python -I -m src.latest --out report.md
+          code=$?
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+          if [ "$code" -ne 0 ] && [ "$code" -ne 3 ]; then exit "$code"; fi
+      - name: gate
+        if: steps.latest.outputs.code == '3'
+        run: |
+          .venv/bin/playwright install --with-deps chromium
+          make lint test probe
+      - name: commit
+        if: steps.latest.outputs.code == '3'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/out/latest.json docs/index.html
+          if git diff --cached --quiet; then echo "nothing changed"; exit 0; fi
+          git commit -m "data: monthly FY2026 re-pull, DoD as reported so far"
+          git pull --rebase origin main
+          git push
+      - name: close a failure issue once a run succeeds
+        if: success()
+        run: |
+          n=$(gh issue list --state open --search 'in:title "FY2026 refresh failed"' --json number -q '.[0].number')
+          if [ -n "$n" ]; then gh issue close "$n" --comment "Fixed: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"; fi
+      - name: open or update the failure issue
+        if: failure() || cancelled()  # a job timeout is "cancelled", and must not be silent
+        run: |
+          title="FY2026 refresh failed"
+          { echo "Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"; echo;
+            echo "Nothing was committed. The page keeps its last good FY2026 line."; echo;
+            cat report.md 2>/dev/null || echo "No report: the pull failed before writing one."; } > failure.md
+          n=$(gh issue list --state open --search "in:title \"$title\"" --json number -q '.[0].number')
+          if [ -n "$n" ]; then gh issue comment "$n" --body-file failure.md; else gh issue create --title "$title" --body-file failure.md; fi
+      - run: cat report.md >> "$GITHUB_STEP_SUMMARY"
+        if: always() && hashFiles('report.md') != ''

@@ -10,3 +10,4 @@ data/pull.log
 data/probe/
 data/parquet/
 *.egg-info/
+data/latest/
