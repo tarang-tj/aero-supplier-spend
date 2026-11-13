@@ -11,7 +11,7 @@
       "total": 115535015268.62
     },
     "nasa": {
-      "api_count": 23500,
+      "api_count": 0,
       "bulk_rows": 23497,
       "child_top5_share": 0.313,
       "parent_top1": "Caltech (JPL)",
